@@ -13,7 +13,14 @@ app.get('/status', (req,res) => {
     res.send({it:"works"})
 });
 
-const PORT = 8081 || process.env.PORT;
+
+app.post('/register', (req,res) => {
+    res.send({
+        message: `Hello ${req.body.email}! Your user has registered! Have fun!`,
+    })
+})
+
+const PORT = 8088 || process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`Listening to the port ${PORT}`);
